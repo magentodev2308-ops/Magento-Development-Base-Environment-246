@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <tab id="commerce_loyalty" translate="label" sortOrder="100">
+            <label>Commerce Loyalty</label>
+        </tab>
+
+        <section id="customer_loyalty_level_system"
+                 translate="label"
+                 sortOrder="10"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+
+            <label>Customer Loyalty Level System</label>
+            <tab>commerce_loyalty</tab>
+            <resource>CommerceLoyalty_CustomerLoyaltyLevelSystem::config</resource>
+
+            <group id="general"
+                   translate="label"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+
+                <label>General Settings</label>
+
+                <!-- Enable / Disable -->
+                <field id="enabled"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+
+            <group id="tags"
+                   translate="label"
+                   sortOrder="20"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+
+                <label>Loyalty Tier Structure</label>
+                <depends>
+                    <field id="customer_loyalty_level_system/general/enabled">1</field>
+                </depends>
+                <field id="tier_rows"
+                    translate="label"
+                    type="note"
+                    sortOrder="10"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1">
+
+                    <frontend_model>CommerceLoyalty\CustomerLoyaltyLevelSystem\Block\Adminhtml\Form\Field\TierRows</frontend_model>
+                    
+                </field>
+
+            </group>
+
+        </section>
+    </system>
+</config>

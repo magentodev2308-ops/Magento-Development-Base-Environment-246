@@ -1,0 +1,22 @@
+/* Target ONLY your field row */
+#row_customer_loyalty_level_system_tags_tier_rows > td.label {
+    display: none !important;
+}
+
+/* Expand value column to full width */
+#row_customer_loyalty_level_system_tags_tier_rows > td.value {
+    width: 100% !important;
+    padding-left: 0 !important;
+}
+
+/* Make inner table take full width */
+#row_customer_loyalty_level_system_tags_tier_rows .admin__control-table {
+    width: 100% !important;
+}
+
+/* Improve input spacing */
+#row_customer_loyalty_level_system_tags_tier_rows input,
+#row_customer_loyalty_level_system_tags_tier_rows select {
+    width: 100%;
+    box-sizing: border-box;
+}
