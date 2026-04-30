@@ -1,0 +1,10 @@
+<h2>Please Confirm Your Withdrawal</h2>
+
+<p>Click confirm to finalize your withdrawal.</p>
+
+<a href="<?= $block->getUrl('*/*/confirm', [
+    'id' => $block->getRequest()->getParam('id'),
+    'token' => $block->getRequest()->getParam('token')
+]) ?>">
+    Confirm Withdrawal
+</a>
